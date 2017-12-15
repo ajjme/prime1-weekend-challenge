@@ -37,6 +37,9 @@ function updateInfo() {
     var newEmployee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary, monthlyCosts);
     people.push(newEmployee);
     appendEmployee(newEmployee);
+    clearInputFields();
+  } else {
+    alert('One of the fields is not filled out!');
   }
 } // END: updateInfo()
 
@@ -51,3 +54,12 @@ function appendEmployee(employee) {
 
   $('#tableBody').append(newRow);
 } // END: appendEmployee(newEmployee)
+
+// SUMMARY: Clear input fields
+function clearInputFields() {
+  $('#firstName').val('');
+  $('#lastName').val('');
+  $('#idNumber').val('');
+  $('#jobTitle').val('');
+  $('#annualSalary').val('');
+} // END: clearInputFields()

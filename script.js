@@ -34,5 +34,18 @@ function updateInfo() {
   if (firstName && lastName && idNumber && jobTitle && annualSalary) {
     var newEmployee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary);
     people.push(newEmployee);
+    appendEmployee(newEmployee);
   }
 } // END: updateInfo()
+
+// SUMMARY: Appends new info to DOM
+function appendEmployee(employee) {
+  var newRow = $('<tr>');
+  newRow.append('<td>' + employee.firstName + '</td>');
+  newRow.append('<td>' + employee.lastName + '</td>');
+  newRow.append('<td>' + employee.idNumber + '</td>');
+  newRow.append('<td>' + employee.jobTitle + '</td>');
+  newRow.append('<td>' + employee.annualSalary + '</td>');
+
+  $('#tableBody').append(newRow);
+} // END: appendEmployee(newEmployee)

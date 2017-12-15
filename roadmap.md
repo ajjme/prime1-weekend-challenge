@@ -12,7 +12,7 @@
   - <s>annual salary</s>
  2. <s>Submit button collects info</s>
  3. <s>Store info for monthly costs</s>
- 4. Append info to the DOM
+ 4. <s>Append info to the DOM</s>
  5. Clear input fields
  6. Calculate monthly costs
  7. Append monthly costs to DOM

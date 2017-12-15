@@ -15,12 +15,13 @@ function start() {
 }
 
 // SUMMARY: Constructor for employee
-function Employee(firstName, lastName, idNumber, jobTitle, annualSalary) {
+function Employee(firstName, lastName, idNumber, jobTitle, annualSalary, monthlyCosts) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.idNumber = idNumber;
   this.jobTitle = jobTitle;
   this.annualSalary = annualSalary;
+  this.monthlyCosts = monthlyCosts;
 } // END: Employee(firstName, lastName, idNumber, jobTitle, annualSalary)
 
 // SUMMARY: Collects info from input form
@@ -30,9 +31,10 @@ function updateInfo() {
   var idNumber = $('#idNumber').val();
   var jobTitle = $('#jobTitle').val();
   var annualSalary = $('#annualSalary').val();
+  var monthlyCosts = annualSalary / 12;
 
   if (firstName && lastName && idNumber && jobTitle && annualSalary) {
-    var newEmployee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary);
+    var newEmployee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary, monthlyCosts);
     people.push(newEmployee);
     appendEmployee(newEmployee);
   }

@@ -2,7 +2,7 @@
 # ROADMAP
 
 ## Next
-10. Add styling to page
+1. Make cumulative monthly cost report
 
 ##### Done
 1. Input forms
@@ -19,3 +19,4 @@
 7. Append monthly costs to DOM
 8. Create delete button
 9. Remove employee from DOM
+10. Add styling to page

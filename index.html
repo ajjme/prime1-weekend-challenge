@@ -6,6 +6,7 @@
 
     <script src="jquery-3.2.1.min.js"></script>
     <script src="script.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Barlow" rel="stylesheet">
     <link href="style.css" rel="stylesheet" />
 
   </head>
@@ -14,29 +15,32 @@
     <header>
       <h1>Salary Calculator</h1>
 
-      <div>
-        <input type="text" value="Andrew" placeholder="First Name" id="firstName" />
-        <input type="text" value="Johnson" placeholder="Last Name" id="lastName" />
-        <input type="text" value="10" placeholder="ID Number" id="idNumber" />
-        <input type="text" value="Bossman" placeholder="Job Title" id="jobTitle" />
-        <input type="text" value="100000" placeholder="Annual Salary" id="annualSalary" />
-        <button id="submitButton">Submit</button>
+      <div id="inputs">
+          <input type="text" placeholder="First Name" id="firstName" />
+          <input type="text" placeholder="Last Name" id="lastName" />
+          <input type="text" placeholder="ID Number" id="idNumber" />
+          <input type="text" placeholder="Job Title" id="jobTitle" />
+          <input type="text" placeholder="Annual Salary" id="annualSalary" />
+        <button id="submitButton">Add New</button>
       </div>
 
     </header>
 
     <main>
+
+      <div id="monthlyCostsReport">Monthly Costs: <span>$0</span></div>
+
       <table>
         <thead>
-          <tr><th>First Name</th><th>Last Name</th><th>ID Number</th><th>Job Title</th><th>Annual Salary</th><th>Monthly Costs</th><th>Delete</th></tr>
+          <tr><th>First Name</th><th>Last Name</th><th>ID Number</th><th>Job Title</th><th>Annual Salary</th><th>Actions</th></tr>
         </thead>
         <tbody id="tableBody">
-          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button>Delete</button></td></tr>
-          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button>Delete</button></td></tr>
-          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button>Delete</button></td></tr>
-          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button>Delete</button></td></tr>
-          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button>Delete</button></td></tr>
-          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button>Delete</button></td></tr>
+          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button class="deleteButton">Delete</button></td></tr>
+          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button class="deleteButton">Delete</button></td></tr>
+          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button class="deleteButton">Delete</button></td></tr>
+          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button class="deleteButton">Delete</button></td></tr>
+          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button class="deleteButton">Delete</button></td></tr>
+          <tr><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td>asdf</td><td><button class="deleteButton">Delete</button></td></tr>
         </tbody>
       </table>
 

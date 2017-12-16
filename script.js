@@ -27,14 +27,23 @@ function deleteRow() {
 
 
 // SUMMARY: Constructor for employee
-function Employee(firstName, lastName, idNumber, jobTitle, annualSalary, monthlyCosts) {
+function Employee(firstName, lastName, idNumber, jobTitle, annualSalary) {
   this.firstName = firstName;
   this.lastName = lastName;
   this.idNumber = idNumber;
   this.jobTitle = jobTitle;
   this.annualSalary = annualSalary;
-  this.monthlyCosts = monthlyCosts;
 } // END: Employee(firstName, lastName, idNumber, jobTitle, annualSalary)
+
+
+// SUMMARY: Calculates monthly costs
+function calculateMonthlyCosts() {
+  var totalMonthlyCosts = 0;
+  for (var i = 0; i < people.length; i++) {
+    totalMonthlyCosts += people[i].annualSalary / 12;
+  }
+  return totalMonthlyCosts;
+} // END: calculateMonthlyCosts()
 
 
 // SUMMARY: Collects info from input form
@@ -45,12 +54,11 @@ function updateInfo() {
     var idNumber = $('#idNumber').val();
     var jobTitle = $('#jobTitle').val();
     var annualSalary = $('#annualSalary').val();
-    var monthlyCosts = (annualSalary / 12).toFixed(2);
   // END
 
   // SUMMARY: Store info if input is valid
     if (firstName && lastName && idNumber && jobTitle && annualSalary) {
-      var newEmployee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary, monthlyCosts);
+      var newEmployee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary);
       people.push(newEmployee);
       appendEmployee(newEmployee);
       clearInputFields();
@@ -70,8 +78,7 @@ function appendEmployee(employee) {
   newRow.append('<td>' + employee.idNumber + '</td>');
   newRow.append('<td>' + employee.jobTitle + '</td>');
   newRow.append('<td>$' + employee.annualSalary + '</td>');
-  newRow.append('<td>$' + employee.monthlyCosts + '</td>');
-  newRow.append('<td><button>Delete</button></td>');
+  newRow.append('<td><button class="deleteButton">Delete</button></td>');
 
   $('#tableBody').append(newRow);
 } // END: appendEmployee(newEmployee)

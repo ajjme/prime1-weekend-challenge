@@ -3,6 +3,8 @@ $(document).ready(start);
 
 // SUMMARY: Stored default info
   var people = [];
+  var peopleCount = 0;
+  var removedCosts = 0;
 // END
 
 
@@ -22,6 +24,14 @@ function start() {
 
 // SUMMARY: Deletes current row
 function deleteRow() {
+
+  // SUMMARY: Removes this row's monthlyCost from total
+    removedCosts += $(this).closest('tr').data().monthlyCost;
+    console.log(removedCosts);
+    displayMonthlyCosts();
+  // END
+
+
   $(this).closest('tr').remove();
 } // END: deleteRow()
 
@@ -51,7 +61,9 @@ function calculateMonthlyCosts() {
 // SUMMARY: Displays monthly costs report
 function displayMonthlyCosts() {
   var newCost = calculateMonthlyCosts();
+  newCost = newCost - removedCosts;
   $('#monthlyCostsReport span').text(newCost);
+  // NOTE: I didn't "append" this info to the DOM per the instructions, because we wanted to update the new value each time.
 } // END: displayMonthlyCosts()
 
 
@@ -67,11 +79,15 @@ function updateInfo() {
 
   // SUMMARY: Store info if input is valid
     if (firstName && lastName && idNumber && jobTitle && annualSalary) {
-      var newEmployee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary);
-      people.push(newEmployee);
-      appendEmployee(newEmployee);
-      clearInputFields();
-      displayMonthlyCosts();
+      if (!isNaN(annualSalary)) {
+        var newEmployee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary);
+        people.push(newEmployee);
+        appendEmployee(newEmployee);
+        clearInputFields();
+        displayMonthlyCosts();
+      } else {
+        alert('The annual salary must be a number!');
+      }
     } else {
       alert('One of the fields is not filled out!');
     }
@@ -82,7 +98,7 @@ function updateInfo() {
 
 // SUMMARY: Appends new info to DOM
 function appendEmployee(employee) {
-  var newRow = $('<tr>');
+  var newRow = $('<tr id="employee-' + peopleCount++ + '">');
   newRow.append('<td>' + employee.firstName + '</td>');
   newRow.append('<td>' + employee.lastName + '</td>');
   newRow.append('<td>' + employee.idNumber + '</td>');
@@ -90,7 +106,14 @@ function appendEmployee(employee) {
   newRow.append('<td>$' + employee.annualSalary + '</td>');
   newRow.append('<td><button class="deleteButton">Delete</button></td>');
 
-  $('#tableBody').append(newRow);
+  // SUMMARY: Append info to DOM and add data
+    $('#tableBody').append(newRow);
+    var newRowInDom = $(newRow).data('monthlyCost', employee.annualSalary/12);
+    console.log(newRowInDom.data());
+    //addedRow.data('annualSalary', employee.annualSalary);
+    //console.log(addedRow.data());
+  // END
+
 } // END: appendEmployee(newEmployee)
 
 

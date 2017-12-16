@@ -32,7 +32,7 @@ function Employee(firstName, lastName, idNumber, jobTitle, annualSalary) {
   this.lastName = lastName;
   this.idNumber = idNumber;
   this.jobTitle = jobTitle;
-  this.annualSalary = annualSalary;
+  this.annualSalary = Number(annualSalary);
 } // END: Employee(firstName, lastName, idNumber, jobTitle, annualSalary)
 
 
@@ -40,10 +40,19 @@ function Employee(firstName, lastName, idNumber, jobTitle, annualSalary) {
 function calculateMonthlyCosts() {
   var totalMonthlyCosts = 0;
   for (var i = 0; i < people.length; i++) {
-    totalMonthlyCosts += people[i].annualSalary / 12;
+    totalMonthlyCosts += people[i].annualSalary;
   }
+  totalMonthlyCosts /= 12;
+  totalMonthlyCosts = totalMonthlyCosts.toFixed(2);
   return totalMonthlyCosts;
 } // END: calculateMonthlyCosts()
+
+
+// SUMMARY: Displays monthly costs report
+function displayMonthlyCosts() {
+  var newCost = calculateMonthlyCosts();
+  $('#monthlyCostsReport span').text(newCost);
+} // END: displayMonthlyCosts()
 
 
 // SUMMARY: Collects info from input form
@@ -62,6 +71,7 @@ function updateInfo() {
       people.push(newEmployee);
       appendEmployee(newEmployee);
       clearInputFields();
+      displayMonthlyCosts();
     } else {
       alert('One of the fields is not filled out!');
     }

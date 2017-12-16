@@ -12,7 +12,19 @@ function start() {
     $('#submitButton').on('click', updateInfo);
   // END
 
+  // SUMMARY: Listen to delete row
+    $('#tableBody').on('click', 'button', deleteRow);
+  // END
+
+
 }
+
+// SUMMARY: Deletes current row
+function deleteRow() {
+  $(this).closest('tr').remove();
+} // END: deleteRow()
+
+
 
 // SUMMARY: Constructor for employee
 function Employee(firstName, lastName, idNumber, jobTitle, annualSalary, monthlyCosts) {

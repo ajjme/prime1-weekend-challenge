@@ -31,7 +31,7 @@ function updateInfo() {
   var idNumber = $('#idNumber').val();
   var jobTitle = $('#jobTitle').val();
   var annualSalary = $('#annualSalary').val();
-  var monthlyCosts = annualSalary / 12;
+  var monthlyCosts = (annualSalary / 12).toFixed(2);
 
   if (firstName && lastName && idNumber && jobTitle && annualSalary) {
     var newEmployee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary, monthlyCosts);
@@ -50,7 +50,9 @@ function appendEmployee(employee) {
   newRow.append('<td>' + employee.lastName + '</td>');
   newRow.append('<td>' + employee.idNumber + '</td>');
   newRow.append('<td>' + employee.jobTitle + '</td>');
-  newRow.append('<td>' + employee.annualSalary + '</td>');
+  newRow.append('<td>$' + employee.annualSalary + '</td>');
+  newRow.append('<td>$' + employee.monthlyCosts + '</td>');
+  newRow.append('<td><button>Delete</button></td>');
 
   $('#tableBody').append(newRow);
 } // END: appendEmployee(newEmployee)

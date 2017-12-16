@@ -43,6 +43,8 @@ function Employee(firstName, lastName, idNumber, jobTitle, annualSalary) {
   this.idNumber = idNumber;
   this.jobTitle = jobTitle;
   this.annualSalary = Number(annualSalary);
+  this.monthlyCost = Number( (this.annualSalary / 12).toFixed(2) );
+  // NOTE: This looks gross and too long.
 } // END: Employee(firstName, lastName, idNumber, jobTitle, annualSalary)
 
 
@@ -50,10 +52,8 @@ function Employee(firstName, lastName, idNumber, jobTitle, annualSalary) {
 function calculateMonthlyCosts() {
   var totalMonthlyCosts = 0;
   for (var i = 0; i < people.length; i++) {
-    totalMonthlyCosts += people[i].annualSalary;
+    totalMonthlyCosts += people[i].monthlyCost;
   }
-  totalMonthlyCosts /= 12;
-  totalMonthlyCosts = totalMonthlyCosts.toFixed(2);
   return totalMonthlyCosts;
 } // END: calculateMonthlyCosts()
 
@@ -104,14 +104,12 @@ function appendEmployee(employee) {
   newRow.append('<td>' + employee.idNumber + '</td>');
   newRow.append('<td>' + employee.jobTitle + '</td>');
   newRow.append('<td>$' + employee.annualSalary + '</td>');
+  newRow.append('<td>$' + employee.monthlyCost + '</td>');
   newRow.append('<td><button class="deleteButton">Delete</button></td>');
 
   // SUMMARY: Append info to DOM and add data
+    $(newRow).data('monthlyCost', employee.monthlyCost);
     $('#tableBody').append(newRow);
-    var newRowInDom = $(newRow).data('monthlyCost', employee.annualSalary/12);
-    console.log(newRowInDom.data());
-    //addedRow.data('annualSalary', employee.annualSalary);
-    //console.log(addedRow.data());
   // END
 
 } // END: appendEmployee(newEmployee)

@@ -2,7 +2,6 @@
 # ROADMAP
 
 ## Next
-1. Add monthlyCost back as a constructor value
 
 ##### Done
 1. Input forms
@@ -22,3 +21,4 @@
 10. Add styling to page
 1. Make cumulative monthly cost report
 1. Update monthly cost report on delete
+1. Add monthlyCost back as a constructor value

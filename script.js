@@ -1,10 +1,12 @@
 $(document).ready(start);
 
+
 // SUMMARY: Stored default info
   var people = [];
 // END
 
 
+// SUMMARY: Starts the script on pageload
 function start() {
   console.log('script srced');
 
@@ -15,15 +17,13 @@ function start() {
   // SUMMARY: Listen to delete row
     $('#tableBody').on('click', 'button', deleteRow);
   // END
-
-
 }
+
 
 // SUMMARY: Deletes current row
 function deleteRow() {
   $(this).closest('tr').remove();
 } // END: deleteRow()
-
 
 
 // SUMMARY: Constructor for employee
@@ -36,24 +36,31 @@ function Employee(firstName, lastName, idNumber, jobTitle, annualSalary, monthly
   this.monthlyCosts = monthlyCosts;
 } // END: Employee(firstName, lastName, idNumber, jobTitle, annualSalary)
 
+
 // SUMMARY: Collects info from input form
 function updateInfo() {
-  var firstName = $('#firstName').val();
-  var lastName = $('#lastName').val();
-  var idNumber = $('#idNumber').val();
-  var jobTitle = $('#jobTitle').val();
-  var annualSalary = $('#annualSalary').val();
-  var monthlyCosts = (annualSalary / 12).toFixed(2);
+  // SUMMARY: Collect info, make calculations
+    var firstName = $('#firstName').val();
+    var lastName = $('#lastName').val();
+    var idNumber = $('#idNumber').val();
+    var jobTitle = $('#jobTitle').val();
+    var annualSalary = $('#annualSalary').val();
+    var monthlyCosts = (annualSalary / 12).toFixed(2);
+  // END
 
-  if (firstName && lastName && idNumber && jobTitle && annualSalary) {
-    var newEmployee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary, monthlyCosts);
-    people.push(newEmployee);
-    appendEmployee(newEmployee);
-    clearInputFields();
-  } else {
-    alert('One of the fields is not filled out!');
-  }
+  // SUMMARY: Store info if input is valid
+    if (firstName && lastName && idNumber && jobTitle && annualSalary) {
+      var newEmployee = new Employee(firstName, lastName, idNumber, jobTitle, annualSalary, monthlyCosts);
+      people.push(newEmployee);
+      appendEmployee(newEmployee);
+      clearInputFields();
+    } else {
+      alert('One of the fields is not filled out!');
+    }
+  // END
+
 } // END: updateInfo()
+
 
 // SUMMARY: Appends new info to DOM
 function appendEmployee(employee) {
@@ -68,6 +75,7 @@ function appendEmployee(employee) {
 
   $('#tableBody').append(newRow);
 } // END: appendEmployee(newEmployee)
+
 
 // SUMMARY: Clear input fields
 function clearInputFields() {

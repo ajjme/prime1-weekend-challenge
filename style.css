@@ -1,26 +1,81 @@
 
-body { font-family: 'Barlow', sans-serif; color: #0f0a01; }
+body {
+  font-family: 'Barlow', sans-serif;
+  color: #0f0a01;
+}
 
-table { width: 100%;  }
+table {
+  width: 100%;
+}
 
-body, header, main { margin: 0 auto; }
+body, header, main {
+  margin: 0 auto;
+}
 
-td { background-color: #fbfbfb; width: 100px; }
-table, td, th, tr { margin: 0; padding: 0; }
-th { background-color: #f45844; color: #fff; }
+td {
+  background-color: #fbfbfb;
+  width: 100px;
+}
+table, td, th, tr {
+  margin: 0;
+  padding: 0;
+}
+th {
+  background-color: #f45844;
+  color: #fff;
+}
 
-header { background: #f45844; padding-top: 50px; }
-h1 { margin: 25px; color: #fff; }
+header {
+  background: #f45844;
+  padding-top: 50px;
+}
+h1 {
+  margin: 25px;
+  color: #fff;
+}
 
-#monthlyCostsReport { padding: 20px 25px; }
-#monthlyCostsReport span { font-weight: bold; }
+#monthlyCostsReport {
+  padding: 20px 25px;
+}
+#monthlyCostsReport span {
+  font-weight: bold;
+}
 
-#form { background: grey; }
-#form input { background: #fbfbfb; }
+#form {
+  background: grey;
+}
+#form input {
+  background: #fbfbfb;
+}
 
-input { font-family: 'Barlow', sans-serif; font-size: 14pt; width: 150px; margin-right: 10px; border: 0; height: 20pt; }
-#inputs { clear: both; display: block; padding: 25px; background: #eee; }
-#submitButton { font-size: 14pt; font-weight: bold; font-family: 'Barlow', sans-serif; border-radius: 1000px; background: #f45844; border: 1px #000 solid; padding: 5px 10px; font-weight: bold; }
-.deleteButton { background: #f45844; }
+input {
+  font-family: 'Barlow', sans-serif;
+  font-size: 14pt;
+  width: 150px;
+  margin-right: 10px;
+  border: 0;
+  height: 20pt;
+}
+#inputs {
+  clear: both;
+  display: block;
+  padding: 25px;
+  background: #eee;
+}
+#submitButton {
+  font-size: 14pt;
+  font-weight: bold;
+  font-family: 'Barlow', sans-serif;
+  border-radius: 1000px;
+  background: #f45844;
+  border: 1px #000 solid;
+  padding: 5px 10px;
+  font-weight: bold;
+}
+.deleteButton {
+  background: #f45844;
+}
 
-header, main { width: 1000px; }
+header, main {
+  width: 1000px;
+}

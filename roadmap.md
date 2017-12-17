@@ -3,7 +3,9 @@
 
 ## Next
 
-##### Done
+---
+
+## Done
 1. Input forms
   - employee first name
   - last name

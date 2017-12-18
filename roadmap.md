@@ -6,21 +6,21 @@
 ---
 
 ## Done
-1. Input forms
+- [x] Input forms
   - employee first name
   - last name
   - ID number
   - job title
   - annual salary
-2. Submit button collects info
- 4. Append info to the DOM
- 3. Store info for monthly costs
-5. Clear input fields
-6. Calculate monthly costs
-7. Append monthly costs to DOM
-8. Create delete button
-9. Remove employee from DOM
-10. Add styling to page
-1. Make cumulative monthly cost report
-1. Update monthly cost report on delete
-1. Add monthlyCost back as a constructor value
+- [x] Submit button collects info
+- [x] Append info to the DOM
+- [x] Store info for monthly costs
+- [x] Clear input fields
+- [x] Calculate monthly costs
+- [x] Append monthly costs to DOM
+- [x] Create delete button
+- [x] Remove employee from DOM
+- [x] Add styling to page
+- [x] Make cumulative monthly cost report
+- [x] Update monthly cost report on delete
+- [x] Add monthlyCost back as a constructor value

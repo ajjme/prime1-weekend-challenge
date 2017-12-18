@@ -10,7 +10,6 @@ $(document).ready(start);
 
 // SUMMARY: Starts the script on pageload
 function start() {
-  console.log('script srced');
 
   // SUMMARY: Submit button collects info
     $('#submitButton').on('click', updateInfo);
@@ -31,7 +30,6 @@ function deleteRow() {
     displayMonthlyCosts();
   // END
 
-
   $(this).closest('tr').remove();
 } // END: deleteRow()
 
@@ -44,7 +42,6 @@ function Employee(firstName, lastName, idNumber, jobTitle, annualSalary) {
   this.jobTitle = jobTitle;
   this.annualSalary = Number(annualSalary);
   this.monthlyCost = Number( (this.annualSalary / 12).toFixed(2) );
-  // NOTE: This looks gross and too long.
 } // END: Employee(firstName, lastName, idNumber, jobTitle, annualSalary)
 
 
